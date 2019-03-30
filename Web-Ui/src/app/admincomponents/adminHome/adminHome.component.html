@@ -1,0 +1,72 @@
+<app-adminNavbar></app-adminNavbar>
+
+<div class="jumbotron">
+  <h1 class="display-3">Admin Panel</h1>
+  <p class="lead">This is a simple hero unit, a simple jumbotron-style component for calling extra attention to
+    featured content or information.</p>
+
+  <hr class="my-4">
+  <p>It uses utility classes for typography and spacing to space content out within the larger container.</p>
+  <p class="lead">
+
+
+  </p>
+  <div class="row">
+    <div *ngIf="adminout" class="card border-warning mb-3" style="max-width: 20rem;">
+      <a href="/allproducts">
+        <div class="card-header">All Products list</div>
+        <div class="card-body">
+          <h4 class="card-title">Warning card title</h4>
+          <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's
+            content.</p>
+
+        </div>
+
+      </a>
+    </div>
+
+    <div *ngIf="adminout" class="card border-warning mb-3" style="max-width: 20rem;">
+      <a href="/allsliders">
+        <div class="card-header">All Sliders list</div>
+        <div class="card-body">
+          <h4 class="card-title">Warning card title</h4>
+          <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's
+            content.</p>
+
+        </div>
+
+      </a>
+    </div>
+    <div *ngIf="adminout" class="card border-warning mb-3" style="max-width: 20rem;">
+      <a href="/adminproduct">
+        <div class="card-header">Add Product</div>
+        <div class="card-body">
+          <h4 class="card-title">Warning card title</h4>
+          <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's
+            content.</p>
+
+        </div>
+
+      </a>
+    </div>
+    <div *ngIf="adminout" class="card border-warning mb-3" style="max-width: 20rem;">
+      <a href="/adminslider">
+        <div class="card-header">Add Slider</div>
+        <div class="card-body">
+          <h4 class="card-title">Warning card title</h4>
+          <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's
+            content.</p>
+
+        </div>
+
+      </a>
+
+      <br>
+    </div>
+    <br>
+    <br><br>
+    <div *ngIf="!adminout" class="text-center center">
+      <h2 class="text-center center">You must be logged in to view content</h2>
+    </div><br><br>
+  </div><br>
+  <app-adminFooter></app-adminFooter>

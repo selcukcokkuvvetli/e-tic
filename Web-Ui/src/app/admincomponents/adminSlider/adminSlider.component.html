@@ -1,0 +1,35 @@
+<app-adminNavbar></app-adminNavbar>
+<div class="jumbotron">
+  <div class="row">
+    <div class="col-3"></div>
+    <div class="col-6">
+
+      <form #addSlider="ngForm" (ngSubmit)="postSlider()">
+        <input [(ngModel)]="firstpage.name" name="name" class="form-control" type="text" placeholder="Name" />
+        <input [(ngModel)]="firstpage.link"name="link" class="form-control" type="text" placeholder="Link" />
+        <input [(ngModel)]="firstpage.description" name="description"class="form-control" type="text" placeholder="Desc" />
+        <input [(ngModel)]="firstpage.price"class="form-control" name="price" type="text" placeholder="n-Price" />
+        
+
+        <div *ngIf="currentFileUpload" class="progress">
+          <div class="progress-bar progress-bar-info progress-bar-striped" role="progressbar" attr.aria-valuenow="{{progress.percentage}}"
+            aria-valuemin="0" aria-valuemax="100" [ngStyle]="{width:progress.percentage+'%'}">
+            {{progress.percentage}}%</div>
+        </div>
+        
+
+        <label class="btn btn-default">
+          <input type="file" (change)="selectFile($event)" name="file" 
+              id="file"
+              single [(ngModel)]="firstpage.image"
+              >
+        </label>
+
+        <br>
+        <button class="btn btn-success" [disabled]="!selectedFiles" type="submit" (click)="upload()">Save</button> 
+      </form>
+    </div>
+    <div class="col-3"></div>
+  </div>
+</div>
+<app-adminFooter></app-adminFooter>

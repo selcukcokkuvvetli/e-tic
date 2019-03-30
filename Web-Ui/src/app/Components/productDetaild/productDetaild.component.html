@@ -1,0 +1,30 @@
+<app-navbar></app-navbar>
+<div class="jumbotron"> 
+  <div class="row">
+      <div class="col-3"></div>
+    <div class="col-3">
+      
+      <img src="/assets/{{oneProduct.image}}" width="200" height="250" alt="ürün resmi"/></div>
+    
+    <div class="col-6">
+    <div class="alert alert-primary" role="alert">
+         {{oneProduct.name}}
+      </div>
+    <div class="alert alert-primary" role="alert">
+          {{oneProduct.price}}
+      </div>
+    <div class="alert alert-primary" role="alert">
+             {{oneProduct.descrip}}
+             {{oneProduct.image}}
+     </div>
+     <button type="submit"   class="btn btn-danger" (click)="addcard()">Add</button>
+    </div>
+      
+    
+  </div>
+  
+</div>
+
+
+
+<app-footer></app-footer>

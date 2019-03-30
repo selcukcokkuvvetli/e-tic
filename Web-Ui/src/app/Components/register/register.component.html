@@ -1,0 +1,35 @@
+
+<app-navbar></app-navbar>
+<div class="jumbotron">
+<div class="row">
+    <div class ="col-3">  </div>
+  <div class ="col-6">
+<form  (ngSubmit)="register()">
+  <div class="form-group">
+    <label for="name">Name</label>
+    <input [(ngModel)]="registerUser.name" type="text" class="form-control" name="name" placeholder="Name">
+  </div>
+  <div class="form-group">
+    <label for="surname">Last Name</label>
+    <input [(ngModel)]="registerUser.surname" type="text" class="form-control" name="surname" placeholder="Name lasr">
+  </div>
+  <div class="form-group">
+    <label for="mail">Email address</label>
+    <input [(ngModel)]="registerUser.mail" type="email" class="form-control" name="mail" placeholder="Enter email">
+  </div>
+  <div class="form-group">
+    <label for="password">Password</label>
+    <input [(ngModel)]="registerUser.password" type="password" class="form-control" name="password" placeholder="Password">
+  </div>
+  <div class="form-group">
+    <label for="tel">Tel</label>
+    <input [(ngModel)]="registerUser.tel" type="text" class="form-control" name="tel" placeholder="tel">
+  </div>
+
+  <button type="submit" class="btn btn-primary">Submit</button>
+</form></div>
+<div class="col-3"></div>
+
+</div>
+
+<app-footer></app-footer>

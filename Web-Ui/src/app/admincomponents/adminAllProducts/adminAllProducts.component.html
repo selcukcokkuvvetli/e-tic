@@ -1,0 +1,30 @@
+<app-adminNavbar></app-adminNavbar>
+<div class="jumbotron">
+  <table class="table table-hover">
+    <thead>
+      <tr>
+        <th scope="col">Category</th>
+        <th scope="col">Name</th>
+        <th scope="col">Old Price</th>
+        <th scope="col">price</th>
+        <th scope="col">Description</th>
+        <th scope="col">Delete</th>
+        <th scope="col">Update</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr *ngFor="let item of allProduct" class="table-dark">
+        <th scope="row">{{item.category}}</th>
+        <td>{{item.name}}</td>
+        <td>{{item.oldPrice}}</td>
+        <td>{{item.price}}</td>
+        <td>{{item.description}}</td>
+        <td><button type="submit" (click)='deleteProduct(item._id)'  class="btn btn-danger">Delete</button></td>
+        <td><a  href="/updateProduct/{{item._id}}" class="btn btn-warning">Update</a></td>
+        
+      </tr>
+    </tbody>
+  </table>
+</div>
+
+<app-adminFooter></app-adminFooter>

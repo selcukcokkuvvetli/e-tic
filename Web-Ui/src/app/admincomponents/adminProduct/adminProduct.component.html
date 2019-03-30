@@ -1,0 +1,54 @@
+<app-adminNavbar></app-adminNavbar>
+<div class="jumbotron">
+  <div class="row">
+    <div class="col-3"></div>
+    <div class="col-6">
+      <form #addproduct="ngForm" (ngSubmit)="postProduct()" enctype="multipart/form-data">
+          <div class="form-group">
+        <input [(ngModel)]="products.name" name="name" class="form-control" type="text" placeholder="Name" />
+        <input [(ngModel)]="products.description"name="description" class="form-control" type="text" placeholder="Desc" />
+        <input [(ngModel)]="products.oldPrice" name="oldPrice" class="form-control" type="text" placeholder="o-Price" />
+        <input [(ngModel)]="products.price" name="price"class="form-control" type="text" placeholder="n-Price" />
+
+        <select [(ngModel)]="products.category" name="category">
+          <option *ngFor="let o of options">
+            {{o.name}}
+          </option>
+        </select>
+
+        <div *ngIf="currentFileUpload" class="progress">
+          <div class="progress-bar progress-bar-info progress-bar-striped" role="progressbar" attr.aria-valuenow="{{progress.percentage}}"
+            aria-valuemin="0" aria-valuemax="100" [ngStyle]="{width:progress.percentage+'%'}">
+            {{progress.percentage}}%</div>
+        </div>
+        
+        <label class="btn btn-default">
+          <input type="file" (change)="selectFile($event)" name="file" 
+              id="file"
+              single [(ngModel)]="products.image"
+              >
+        </label>
+        
+      
+        
+        <br>
+        <button class="btn btn-success" [disabled]="!selectedFiles" type="submit" (click)="upload()">Save</button> 
+        </div>
+        
+        
+      </form>
+
+
+
+
+
+      
+   
+
+
+   
+    </div>
+    <div class="col-3"></div>
+  </div>
+</div>
+<app-adminFooter></app-adminFooter>

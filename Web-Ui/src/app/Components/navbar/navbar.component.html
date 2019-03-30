@@ -1,0 +1,39 @@
+
+<nav class="navbar navbar-expand-lg navbar-dark bg-dark">
+  <a class="navbar-brand" href="home">E-Commerce</a>
+  <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarColor02" aria-controls="navbarColor02" aria-expanded="false" aria-label="Toggle navigation">
+    <span class="navbar-toggler-icon"></span>
+  </button>
+
+  
+    <div class="collapse navbar-collapse" >
+      <ul class="navbar-nav mr-auto">
+        <li class="nav-item active">
+          <a  href="home" class="nav-link">Home</a>
+        </li>
+        <li class="nav-item">
+          <a  href="login" *ngIf="!userout" class="nav-link">Login</a>
+        </li>
+        <li class="nav-item">
+          <a href="register" *ngIf="!userout" class="nav-link">Register</a>
+        </li>
+        <li class="nav-item">
+          <a  href="products/GPU/0"  class="nav-link">Products</a>
+        </li>
+        <li class="nav-item">
+          <a  href="card" *ngIf="userout" class="nav-link">Card</a>
+        </li>
+        
+        <li class="nav-item">
+          <button type="submit" class="btn btn-link" *ngIf="userout" (click)="logout()">Logout</button>
+        </li>
+      </ul>
+      <form class="form-inline my-2 my-lg-0" #searchform="ngForm"  (ngSubmit)="searchh()">
+        <input [(ngModel)]="search.name" class="form-control mr-sm-2"  name="name"type="text" placeholder="Search">
+        <button class="btn btn-secondary my-2 my-sm-0" type="submit">Search</button>
+      </form>
+    </div>
+  </nav>
+  <div class="progress">
+    <div class="progress-bar bg-info" role="progressbar" style="width: 100%" aria-valuenow="100" aria-valuemin="0" aria-valuemax="100"></div>
+  </div>

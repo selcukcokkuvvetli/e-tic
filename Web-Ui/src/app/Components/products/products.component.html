@@ -1,0 +1,38 @@
+<app-navbar></app-navbar>
+<div class="jumbotron">
+  <div class="row">
+    <div class="col-2">
+      <div class="list-group">
+        <a href="#" class="list-group-item list-group-item-action active">
+          Category List
+        </a>
+        <a *ngFor="let item of options" href="/products/{{item.name}}" class="list-group-item list-group-item-action">{{item.name}}</a>
+
+
+      </div>
+    </div>
+    <!-- Category. -->
+
+
+
+    <div class="row">
+      <div class="col-2"></div>
+      <div  *ngFor="let item of products" class="card" style="width: 18rem;" (click)="addProductBasket(item)">
+        <img class="card-img-top" src="/assets/{{item.image}}" alt="Card image cap" />
+        <div class="card-body">
+          <h5 class="card-title">{{item.name}}</h5>
+          <h6 class="card-subtitle mb-2 text-muted">{{item.price}}</h6>
+          <p class="card-text">
+              {{item.description}}
+          </p>
+          <button type="submit" class="btn btn-primary btn-lg" >Add Card</button> <span *ngIf="userout"> ||</span>
+    
+          <a href="/product/{{item._id}}" class="btn btn-primary btn-lg">Details</a>
+       
+        </div>
+      </div>
+    </div>
+    <!-- ITEM. -->
+  </div>
+
+  <app-footer></app-footer>

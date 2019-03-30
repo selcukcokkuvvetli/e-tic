@@ -1,0 +1,32 @@
+<app-navbar></app-navbar>
+<div class="jumbotron">
+  <table class="table table-hover">
+    <thead>
+      <tr>
+      
+        <th scope="col">Name</th>
+        <th scope="col">Category</th>
+        <th scope="col">Price</th>
+        <th scope="col">Delete</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr *ngFor="let item of Usercard" class="table-dark">
+        <th scope="row">{{item.Product.name}}</th>
+        <td>{{item.Product.category}}</td>
+        <td>{{item.Product.price}}</td>
+        <td><button type="submit" (click)="delCard(item._id)"  class="btn btn-danger">Delete</button></td>
+        
+      </tr>
+      <tr class="table-success">
+          <th scope="row">Total Price</th>
+          <td></td>
+          <td><h6>{{p}} TL </h6></td>
+          
+          <td></td>
+        </tr>
+    </tbody>
+    <p></p>
+  </table>
+</div>
+<app-footer></app-footer>
